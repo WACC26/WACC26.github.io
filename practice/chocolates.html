@@ -48,6 +48,52 @@
                  conic-gradient(#000 0 0) bottom/100% 50% no-repeat;
               }
             }
+
+	    .star {
+  width: 300px;
+  aspect-ratio: 1;
+  background: #F8CA00;
+  clip-path: polygon(50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn)))
+   );
+	    }
+
+	    .rhombus {
+  --b: 15px; /* border thickness */
+  height: 200px; /* adjust to control the size  */
+  aspect-ratio: 1;
+  clip-path:
+    polygon(50% 0,100% 50%,50% 100%,0 50%,50% 0,
+     50% var(--b),
+     var(--b) 50%,
+     50% calc(100% - var(--b)),
+     calc(100% - var(--b)) 50%,
+     50% var(--b)
+    );
+  background: #88A65E;
+}
+.polygon {
+  width: 200px; /* adjust to control the size */
+  aspect-ratio: 1;
+  clip-path: polygon(100% 50%,94.27% 73.24%,78.4% 91.15%,56.03% 99.64%,32.27% 96.75%,12.57% 83.16%,1.45% 61.97%,1.45% 38.03%,12.57% 16.84%,32.27% 3.25%,56.03% 0.36%,78.4% 8.85%,94.27% 26.76%);
+}
+
+	    #polygon{
+		    grid-column-start: 2;
+		    grid-row-start: 3;
+
+	    #rhombus{
+		    grid-column-start: 3;
+		    grid-row-start: 1;
+	    }
+
+	    #star{
+		    grid-column-start: 2;
+		    grid-row-start: 1;
+}
             #chocolateheart{
                 grid-column-start: 3;
                 grid-row-start:2;
@@ -78,6 +124,9 @@
                 <div id="mnm">
 
                 </div>
+		<div class="star" id="star"></div>
+		<div class="rhombus" id="rhombus"></div>
+		<div class="polygon" id="polygon"></div>
             </div>
         </div>
     </body>
