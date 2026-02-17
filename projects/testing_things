@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Portrait</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        container {
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        canvas {
+            border: 2px solid #333;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Teen Self Portrait</h1>
+        <canvas id="portrait"></canvas>
+    </div>
+    
+    <script>
+// Get canvas element
+const canvas = document.getElementById('portrait');
+const ctx = canvas.getContext('2d');
+
+// Set canvas size
+canvas.width = 400;
+canvas.height = 500;
+
+// Background
+ctx.fillStyle = '#e8f4f8';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+// Head
+ctx.fillStyle = '#fdbcb4';
+ctx.beginPath();
+ctx.arc(200, 150, 80, 0, Math.PI * 2);
+ctx.fill();
+
+// Neck
+ctx.fillStyle = '#fdbcb4';
+ctx.fillRect(170, 220, 60, 50);
+
+// Body/Shirt
+ctx.fillStyle = '#4a90e2';
+ctx.fillRect(120, 270, 160, 150);
+
+// Hair (bowl cut)
+ctx.fillStyle = '#1a1a1a';
+ctx.beginPath();
+ctx.arc(200, 150, 85, 0, Math.PI * 2);
+ctx.fill();
+
+// Hair front/bangs
+ctx.fillStyle = '#1a1a1a';
+ctx.fillRect(115, 70, 170, 40);
+
+// Ears
+ctx.fillStyle = '#fdbcb4';
+ctx.beginPath();
+ctx.ellipse(115, 150, 15, 25, 0, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.beginPath();
+ctx.ellipse(285, 150, 15, 25, 0, 0, Math.PI * 2);
+ctx.fill();
+
+// Left Eye (with glasses)
+ctx.strokeStyle = '#333';
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.rect(145, 130, 35, 35);
+ctx.stroke();
+
+// Right Eye (with glasses)
+ctx.beginPath();
+ctx.rect(220, 130, 35, 35);
+ctx.stroke();
+
+// Bridge of glasses
+ctx.beginPath();
+ctx.moveTo(180, 145);
+ctx.lineTo(220, 145);
+ctx.stroke();
+
+// Eyes (blue)
+ctx.fillStyle = '#0066cc';
+ctx.beginPath();
+ctx.arc(162, 150, 10, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(237, 150, 10, 0, Math.PI * 2);
+ctx.fill();
+
+// Pupils
+ctx.fillStyle = '#000';
+ctx.beginPath();
+ctx.arc(162, 150, 5, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(237, 150, 5, 0, Math.PI * 2);
+ctx.fill();
+
+// Nose
+ctx.strokeStyle = '#c9a876';
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.moveTo(200, 160);
+ctx.lineTo(200, 185);
+ctx.stroke();
+
+// Mouth
+ctx.strokeStyle = '#d97f8c';
+ctx.lineWidth = 2;
+ctx.beginPath();
+ctx.arc(200, 210, 20, 0, Math.PI);
+ctx.stroke();
+
+
+
+    </script>
+</body>
+</html>
