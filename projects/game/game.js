@@ -8,35 +8,36 @@ let gameActive = true; //this variable is required.
 
 
 //Make one function for each location
-function locationA() {
+function location Town hall() {
     clear();
-    print("\nYou are in location A!");
+    print("\nYou are in the Town hall!");
     print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationB");
+        "\n\t Port restaurants \n\t Police station \n\t Kennedy Space Center \n\t Beach" );
+
     
     function processInput(input){
-        if (input.toLowerCase() === "locationb") {
-            locationB();
+        if (input.toLowerCase() === " Port restaurants") {
+            location Port restaurants();
         } else {
             stayHere();
-            waitThenCall(locationA);
+            waitThenCall(location Town hall);
         }
     }
     waitForInput(processInput);
 }
 
-function locationB() {
+function location Port restaurants() {
     clear();
-    print("\nYou are in location B!");
+    print("\nYou are at the Port restaurants!");
     print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\tlocationA");
+        "\n\t Town hall");
     
     function processInput(input){
-        if (input.toLowerCase() === "locationa") {
+        if (input.toLowerCase() === "Town hall") {
             locationA();
         } else {
             stayHere();
-            waitThenCall(locationB);
+            waitThenCall(Port restaurants);
         }
     }
     waitForInput(processInput);
@@ -46,7 +47,7 @@ function locationB() {
 //very start. For this simple example, any input will bring you
 //to locationA
 function start(){
-    print("Welcome to my game! Press any key to start");
+    print("Welcome to Cape Canaveral, a small island town on Flordia's east coast! Press any key to start");
 
     function processInput(input){
             locationA();
