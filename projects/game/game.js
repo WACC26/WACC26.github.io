@@ -42,19 +42,6 @@ function  portRestaurants() {
     }
     waitForInput(processInput);
 }
-
-   
-    function processInput(input){
-        if (input.toLowerCase() === "police station") {
-            policeStation();
-        } else {
-            stayHere();
-            waitThenCall(townHall);
-        }
-    }
-    waitForInput(processInput);
-}
-
 function  policeStation() {
     clear();
     print("\nYou are at the Police station!");
@@ -72,7 +59,7 @@ function  policeStation() {
     waitForInput(processInput);
 }
 
-/
+
 
 
 
