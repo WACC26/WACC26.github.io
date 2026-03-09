@@ -8,7 +8,7 @@ let gameActive = true; //this variable is required.
 
 
 //Make one function for each location
-function location Town hall() {
+function townHall() {
     clear();
     print("\nYou are in the Town hall!");
     print("\nWhere do you want to go next? Say one of these choices:" +
@@ -16,28 +16,28 @@ function location Town hall() {
 
     
     function processInput(input){
-        if (input.toLowerCase() === " Port restaurants") {
-            location Port restaurants();
+        if (input.toLowerCase() === "port restaurants") {
+            portRestaurants();
         } else {
             stayHere();
-            waitThenCall(location Town hall);
+            waitThenCall( townHall);
         }
     }
     waitForInput(processInput);
 }
 
-function location Port restaurants() {
+function  portRestaurants() {
     clear();
     print("\nYou are at the Port restaurants!");
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\t Town hall");
     
     function processInput(input){
-        if (input.toLowerCase() === "Town hall") {
-            locationA();
+        if (input.toLowerCase() === "town hall") {
+            townHall();
         } else {
             stayHere();
-            waitThenCall(Port restaurants);
+            waitThenCall(portRestaurants);
         }
     }
     waitForInput(processInput);
@@ -50,7 +50,7 @@ function start(){
     print("Welcome to Cape Canaveral, a small island town on Flordia's east coast! Press any key to start");
 
     function processInput(input){
-            locationA();
+            townHall();
     }
     waitForInput(processInput);
 }
