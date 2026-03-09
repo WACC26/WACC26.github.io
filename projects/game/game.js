@@ -2,7 +2,8 @@ let gameActive = true; //this variable is required.
                        //to stop the game, set it to false.
 
 //Declare your other global variables here
-
+int global_var = visitedPoliceStation;
+int global_var = peacockTreat;
 
 //If you need, add any "helper" functions here
 
