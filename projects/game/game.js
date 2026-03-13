@@ -2,8 +2,9 @@ let gameActive = true; //this variable is required.
                        //to stop the game, set it to false.
 
 //Declare your other global variables here
-int global_var = visitedPoliceStation;
-int global_var = peacockTreat;
+let  beenToSchool = 0
+let  visitedPoliceStation = 0
+let  peacockTreat = 0
 
 //If you need, add any "helper" functions here
 
@@ -29,7 +30,7 @@ function townHall() {
 
 function  portRestaurants() {
     clear();
-    print("\nYou are at the Port restaurants!");
+    print("\nYou are at the Port restaurants! You should grab a burger, or go buy some fish.");
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\t Town hall");
     
@@ -61,6 +62,23 @@ function  policeStation() {
 }
 
 
+function  beach() {
+    clear();
+    print("\nWelcome to the beach! Theres a rocket launch coming up, do you want to watch?");
+    print("\nWhere do you want to go next? Say one of these choices:" +
+        "\n\t Town hall \n\t\ rocketLaunch");
+    
+    function processInput(input){
+        if (input.toLowerCase() === "town hall") {
+            townHall();
+        } else {
+            stayHere();
+            waitThenCall(beach);
+        }
+    }
+    waitForInput(processInput);
+}
+f
 
 
 
