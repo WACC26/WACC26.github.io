@@ -87,9 +87,9 @@ function  ksc() {
 
 function  school() {
     clear();
-	if (peacockTreat) {
+	if (!peacockTreat) {
     print("\nYou walk up to the school to see choas. Bright peacocks are chasing kids into the school, and a teacher yells at you from the other side of the fence to go get some treats. When you ask where, she tells you the Cumberland farms. It's just down the road.");
-	} else if (peacockTreat) {
+	}else (!peacockTreat) {
 	print("You walk up to the pretty birds, and start throwing out the seeds. They quickly follow, away from the school. You turn back to see everyone going home. Good job!")
 	print("Congrats, you saved the day!")
 	gameActive = false;
@@ -113,7 +113,7 @@ function  school() {
 function  cf() {
     clear();
     print("\nYou walk in, and think about what to buy. A quick google search tells you to get seeds, something you quickly grab, as well as a muffin. It was a good muffin");
-	peacockTreat = True;
+	peacockTreat = true;
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\t Town hall \n\t School");
 
