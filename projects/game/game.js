@@ -107,6 +107,7 @@ function  school() {
 function  cf() {
     clear();
     print("\nYou walk in, and think about what to buy. A quick google search tells you to get seeds, something you quickly grab, as well as a muffin. It was a good muffin");
+	peacockTreat = True;
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\t Town hall \n\t School");
     
@@ -124,7 +125,6 @@ function  cf() {
 }
 
 
-k
 
 
 //finally, make sure you customize this to tell it what should happen at the
