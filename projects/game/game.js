@@ -2,9 +2,7 @@ let gameActive = true; //this variable is required.
                        //to stop the game, set it to false.
 
 //Declare your other global variables here
-let  beenToSchool = 0
-let  visitedPoliceStation = 0
-let  peacockTreat = 0
+let  peacockTreat = false;
 
 //If you need, add any "helper" functions here
 
@@ -14,13 +12,19 @@ function townHall() {
     clear();
     print("\nYou are in the Town hall!");
     print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\t Port restaurants \n\t Police station \n\t Kennedy Space Center \n\t Beach" );
+        "\n\t Port restaurants \n\t Police station \n\t Kennedy Space Center \n\t School" );
 
    
     function processInput(input){
         if (input.toLowerCase() === "port restaurants") {
             portRestaurants();
-        } else {
+        } else if (input.toLowerCase() === "police station"){
+	    policeStation();
+	} else if (input.toLowerCase() === "kennedy space center") {
+		ksc(); 
+	} else if (input.toLowerCase() === "school") {
+	   school();
+	}else {
             stayHere();
             waitThenCall( townHall);
         }
@@ -47,6 +51,7 @@ function  portRestaurants() {
 function  policeStation() {
     clear();
     print("\nYou are at the Police station!");
+    print("\nA tired officer looks at you, and asks you to go check out the school to see if there is any peacocks running around. You quickly say yes, you have nothing to do right now.");
     print("\nWhere do you want to go next? Say one of these choices:" +
         "\n\t Town hall");
     
@@ -62,24 +67,64 @@ function  policeStation() {
 }
 
 
-function  beach() {
+function  ksc() {
     clear();
-    print("\nWelcome to the beach! Theres a rocket launch coming up, do you want to watch?");
+    print("\nWelcome to the Space Center! Tourists are all around, and you quickly see why. A bright flame roars into the sky, shaking the ground. A Falcon 9 rocket just launched! That was cool.");
     print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\t Town hall \n\t\ rocketLaunch");
+        "\n\t Town hall");
     
     function processInput(input){
         if (input.toLowerCase() === "town hall") {
             townHall();
         } else {
             stayHere();
-            waitThenCall(beach);
+            waitThenCall(ksc);
         }
     }
     waitForInput(processInput);
 }
-f
 
+
+function  school() {
+    clear();
+    print("\nYou walk up to the school to see choas. Bright peacocks are chasing kids into the school, and a teacher yells at you from the other side of the fence to go get some treats. When you ask where, she tells you the Cumberland farms. It's just down the road.");
+    print("\nWhere do you want to go next? Say one of these choices:" +
+        "\n\t Town hall \n\t Cumberland Farms");
+    
+    function processInput(input){
+        if (input.toLowerCase() === "town hall") {
+            townHall();
+        } else if (input.toLowerCase() === "cumberland farms") {
+		cf();
+	} else {
+            stayHere();
+            waitThenCall(school);
+        }
+    }
+    waitForInput(processInput);
+}
+
+function  cf() {
+    clear();
+    print("\nYou walk in, and think about what to buy. A quick google search tells you to get seeds, something you quickly grab, as well as a muffin. It was a good muffin");
+    print("\nWhere do you want to go next? Say one of these choices:" +
+        "\n\t Town hall \n\t School");
+    
+    function processInput(input){
+        if (input.toLowerCase() === "town hall") {
+            townHall();
+        } else if (input.toLowerCase() === "school") {
+		school();
+	} else {
+            stayHere();
+            waitThenCall(cf);
+        }
+    }
+    waitForInput(processInput);
+}
+
+
+k
 
 
 //finally, make sure you customize this to tell it what should happen at the
