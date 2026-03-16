@@ -89,14 +89,13 @@ function  school() {
     clear();
 	if (!peacockTreat) {
     print("\nYou walk up to the school to see choas. Bright peacocks are chasing kids into the school, and a teacher yells at you from the other side of the fence to go get some treats. When you ask where, she tells you the Cumberland farms. It's just down the road.");
+    print("\nWhere do you want to go next? Say one of these choices:" + "\n\t Town hall \n\t Cumberland farms")
 	}else if (!peacockTreat) {
 	print("You walk up to the pretty birds, and start throwing out the seeds. They quickly follow, away from the school. You turn back to see everyone going home. Good job!")
 	print("Congrats, you saved the day!")
-	gameActive = false;
-	}	
-    print("\nWhere do you want to go next? Say one of these choices:" +
-        "\n\t Town hall \n\t Cumberland Farms");
-    
+	gameActive = false;	
+    }
+
     function processInput(input){
         if (input.toLowerCase() === "town hall") {
             townHall();
